@@ -25,10 +25,14 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   ul{
-      padding: 0;
+    padding: 0;
   }
   li{
-      list-style: none;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color:  black;
   }
   #app{
     overflow-x: hidden;

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Card, MainContainer, ResultSection, P } from './styles'
+import { Card, MainContainer, ResultSection, P } from '../styles'
 import Pagination from '../../components/pagination/Pagination'
+import { Link } from 'react-router-dom'
+import { getPokemonId, upperFirts } from '../../util/strings'
 
 const Main = () => {
   const size = 20
@@ -14,7 +16,6 @@ const Main = () => {
         `https://pokeapi.co/api/v2/pokemon-species?offset=${page}&limit=${size}`
       )
       .then(response => {
-        console.log(response.data)
         setTotalElements(response.data.count)
         setPokemons(response.data.results)
       })
@@ -36,9 +37,9 @@ const Main = () => {
       <ResultSection>
         {pokemons &&
           pokemons.map(p => (
-            <Card key={pokemons.indexOf(p)}>
-              {p.name.charAt(0).toUpperCase() + p.name.slice(1)}
-            </Card>
+            <Link key={pokemons.indexOf(p)} to={`/${getPokemonId(p.url)}`}>
+              <Card>{upperFirts(p.name)}</Card>
+            </Link>
           ))}
       </ResultSection>
       <Pagination
