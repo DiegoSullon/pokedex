@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Card, MainContainer, ResultSection, P } from '../styles'
+import { MainContainer, ResultSection, P } from '../styles'
 import Pagination from '../../components/pagination/Pagination'
-import { Link } from 'react-router-dom'
-import { getPokemonId, upperFirts } from '../../util/strings'
+import { getPokemonId } from '../../util/strings'
+import CardLink from '../../components/cardLink/CardLink'
 
 const Main = () => {
   const size = 20
@@ -37,9 +37,11 @@ const Main = () => {
       <ResultSection>
         {pokemons &&
           pokemons.map(p => (
-            <Link key={pokemons.indexOf(p)} to={`/${getPokemonId(p.url)}`}>
-              <Card>{upperFirts(p.name)}</Card>
-            </Link>
+            <CardLink
+              key={pokemons.indexOf(p)}
+              name={p.name}
+              pokemonId={getPokemonId(p.url)}
+            />
           ))}
       </ResultSection>
       <Pagination

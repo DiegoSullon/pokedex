@@ -15,16 +15,6 @@ export const ResultSection = styled.section`
   grid-template-columns: 1fr;
   grid-gap: 1em;
 `
-
-export const Card = styled.div`
-  /* border: 1px solid black; */
-  box-shadow: 0 0 6px black;
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  font-weight: bold;
-  font-size: 1.2em;
-`
 export const TagList = styled.ul`
   display: flex;
   width: 80%;
