@@ -6,6 +6,9 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
 `
+export const P = styled.p`
+    margin-top: 0;
+`
 export const ResultSection = styled.section`
     width: 80%;
     display: grid;

@@ -24,10 +24,22 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     padding: 0;
   }
+  ul{
+      padding: 0;
+  }
+  li{
+      list-style: none;
+  }
   #app{
     overflow-x: hidden;
     min-height: 100vh;
     display:flex;
     width: 100%;
+  }
+  
+  /* pagination buttons */
+  .selected{
+    background-color: #d6d2d2;
+    box-shadow: 0 0 0px black !important;
   }
 `
