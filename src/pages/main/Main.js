@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Card, MainContainer, ResultSection } from './styles'
 
 const Main = () => {
   const [page, setPage] = useState(0)
@@ -13,10 +14,17 @@ const Main = () => {
       })
   }, [page])
   return (
-    <main>
+    <MainContainer>
       <h1>Pokedex</h1>
-      <section>{pokemons && pokemons.map(p => <div key={pokemons.indexOf(p)}>{p.name}</div>)}</section>
-    </main>
+      <ResultSection>
+        {pokemons &&
+          pokemons.map(p => (
+            <Card key={pokemons.indexOf(p)}>
+              {p.name.charAt(0).toUpperCase() + p.name.slice(1)}
+            </Card>
+          ))}
+      </ResultSection>
+    </MainContainer>
   )
 }
 
