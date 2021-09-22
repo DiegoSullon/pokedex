@@ -16,7 +16,7 @@ const Main = () => {
     setLoading(true)
     axios
       .get(
-        `https://pokeapi.co/api/v2/pokemon-species?offset=${page}&limit=${size}`
+        `https://pokeapi.co/api/v2/pokemon-species?offset=${page * 20}&limit=${size}`
       )
       .then(response => {
         setTotalElements(response.data.count)
@@ -34,11 +34,13 @@ const Main = () => {
       <P>
         Page {page + 1} of {parseInt(totalElements / size) + 1}
       </P>
+
       <Pagination
         pages={parseInt(totalElements / size) + 1}
         selected={page + 1}
         changePage={changePage}
       />
+
       <ResultSection>
         {pokemons &&
           pokemons.map(p => (
@@ -49,6 +51,7 @@ const Main = () => {
             />
           ))}
       </ResultSection>
+
       <Pagination
         pages={parseInt(totalElements / size) + 1}
         selected={page + 1}
