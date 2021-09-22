@@ -5,6 +5,9 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 700px) {
+    width: 80%;
+  }
 `
 export const P = styled.p`
   margin-top: 0;
@@ -14,6 +17,9 @@ export const ResultSection = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1em;
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 export const TagList = styled.ul`
   display: flex;

@@ -39,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     display:flex;
     width: 100%;
+    justify-content: center;
   }
   
   /* pagination buttons */
