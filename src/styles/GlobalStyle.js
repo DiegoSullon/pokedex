@@ -48,4 +48,16 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #d6d2d2;
     box-shadow: 0 0 0px black !important;
   }
+  /* evolution */
+  .evolutionGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 700px) {
+    .evolutionGroup{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 `

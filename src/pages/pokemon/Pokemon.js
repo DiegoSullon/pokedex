@@ -6,7 +6,15 @@ import { Link } from 'react-router-dom'
 import CardLink from '../../components/cardLink/CardLink'
 import Spinner from '../../components/spinner/Spinner'
 import { getEvolutionChain, getPokemonId, upperFirts } from '../../util/utils'
-import { MainContainer, ResultSection, Tag, TagList, Title, Title2 } from '../styles'
+import {
+  Arrow,
+  EvolutionSection,
+  MainContainer,
+  Tag,
+  TagList,
+  Title,
+  Title2
+} from '../styles'
 
 const Pokemon = () => {
   const [id] = useState(useParams().id)
@@ -21,7 +29,7 @@ const Pokemon = () => {
         setLoading(false)
         axios.get(response.data.evolution_chain.url).then(res2 => {
           setEvolution(getEvolutionChain(res2.data.chain))
-        //   console.table(getEvolutionChain(res2.data.chain))
+          //   console.table(getEvolutionChain(res2.data.chain))
         })
         setPokemon(response.data)
       })
@@ -40,21 +48,28 @@ const Pokemon = () => {
               ))}
           </TagList>
           <Title2>Evolution</Title2>
-          <ResultSection>
+          <EvolutionSection>
             {evolution &&
-              evolution.map(e => (
-                <CardLink
-                  key={evolution.indexOf(e)}
-                  name={e.name}
-                  pokemonId={getPokemonId(e.url)}
-                />
-              ))}
-          </ResultSection>
+              evolution.map(e => {
+                if (evolution.indexOf(e) === evolution.length - 1) {
+                  return (
+                    <div key={evolution.indexOf(e)} className='evolutionGroup'>
+                      <CardLink name={e.name} pokemonId={getPokemonId(e.url)} />
+                    </div>
+                  )
+                }
+                return (
+                  <div key={evolution.indexOf(e)} className='evolutionGroup'>
+                    <CardLink name={e.name} pokemonId={getPokemonId(e.url)} />
+                    <Arrow />
+                  </div>
+                )
+              })}
+          </EvolutionSection>
         </>
       ) : (
         <p>Pokemon no encontrado</p>
       )}
-      <br />
       <Link to='/'>
         <Tag>See all</Tag>
       </Link>
