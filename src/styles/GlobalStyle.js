@@ -24,10 +24,27 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     padding: 0;
   }
+  ul{
+    padding: 0;
+  }
+  li{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color:  black;
+  }
   #app{
     overflow-x: hidden;
     min-height: 100vh;
     display:flex;
     width: 100%;
+    justify-content: center;
+  }
+  
+  /* pagination buttons */
+  .selected{
+    background-color: #d6d2d2;
+    box-shadow: 0 0 0px black !important;
   }
 `
