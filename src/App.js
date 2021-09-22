@@ -9,7 +9,7 @@ const App = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path='/' component={Main} />
-        <Route exact path='/:id' component={Pokemon} />
+        <Route path='/:id' render={() => <Pokemon key={Math.random()} />} />
       </Switch>
     </Router>
   )
