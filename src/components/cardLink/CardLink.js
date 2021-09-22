@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { upperFirts } from '../../util/strings'
+import { upperFirts } from '../../util/utils'
 import { Card } from './styles'
 
 const CardLink = ({ name, pokemonId }) => {
