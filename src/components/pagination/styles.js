@@ -5,9 +5,9 @@ export const PaginationContainer = styled.ul`
   /* background-color: red; */
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 1em;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 `
 export const PaginationButton = styled.button`
   background-color: white;
