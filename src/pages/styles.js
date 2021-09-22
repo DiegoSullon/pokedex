@@ -18,6 +18,7 @@ export const Title2 = styled.h2`
   -webkit-text-stroke: 2px #3761a8;
   color: #feca1b;
   font-size: 3em;
+  margin-top: 0;
 `
 export const P = styled.p`
   margin-top: 0;
