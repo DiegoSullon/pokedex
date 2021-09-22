@@ -9,11 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    background-color: white;
+    background-color: #263238;
     height: 100vh;
     overscroll-behavior: none;
     width: 100%;
     margin: 0;
+    color: white;
   }
   a{
       text-decoration: none;

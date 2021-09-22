@@ -9,6 +9,17 @@ export const MainContainer = styled.main`
     width: 80%;
   }
 `
+export const Title = styled.h1`
+  -webkit-text-stroke: 2px #3761A8;
+  color: #FECA1B;
+  font-size: 4em;
+`
+export const Title2 = styled.h2`
+  -webkit-text-stroke: 2px #3761A8;
+  color: #FECA1B;
+  font-size: 3em;
+
+`
 export const P = styled.p`
   margin-top: 0;
 `

@@ -12,7 +12,7 @@ export const PaginationContainer = styled.ul`
 export const PaginationButton = styled.button`
   background-color: white;
   padding: .5em;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-weight: bold;
   margin: 1px;
   box-shadow: 0 0 3px black;

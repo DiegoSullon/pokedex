@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CardLink from '../../components/cardLink/CardLink'
 import Spinner from '../../components/spinner/Spinner'
 import { getEvolutionChain, getPokemonId, upperFirts } from '../../util/utils'
-import { MainContainer, ResultSection, Tag, TagList } from '../styles'
+import { MainContainer, ResultSection, Tag, TagList, Title, Title2 } from '../styles'
 
 const Pokemon = () => {
   const [id] = useState(useParams().id)
@@ -31,15 +31,15 @@ const Pokemon = () => {
       {loading && <Spinner />}
       {pokemon ? (
         <>
-          <h1>{upperFirts(pokemon.name)}</h1>
-          <h2>Groups</h2>
+          <Title>{upperFirts(pokemon.name)}</Title>
+          <Title2>Groups</Title2>
           <TagList>
             {pokemon.egg_groups &&
               pokemon.egg_groups.map(group => (
                 <Tag key={pokemon.egg_groups.indexOf(group)}>{group.name}</Tag>
               ))}
           </TagList>
-          <h2>Evolution</h2>
+          <Title2>Evolution</Title2>
           <ResultSection>
             {evolution &&
               evolution.map(e => (
