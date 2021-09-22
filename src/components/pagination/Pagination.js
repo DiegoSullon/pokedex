@@ -1,19 +1,40 @@
 import React from 'react'
 import { PaginationButton, PaginationContainer } from './styles'
 
-const Pagination = ({ pages = 2, selected = 1, changePage = n => {} }) => {
+const Pagination = ({
+  pages = 2,
+  selected = 1,
+  changePage = n => {}
+}) => {
   const buttons = []
+  const jumpStart = selected
+  const jumpEnd = selected + 5
   for (let i = 1; i <= pages; i++) {
-    buttons.push(
-      <li key={i}>
-        <PaginationButton
-          className={i === selected ? 'selected' : ''}
-          onClick={() => changePage(i)}
-        >
-          {i}
-        </PaginationButton>
-      </li>
-    )
+    if (i <= jumpEnd && i >= jumpStart) {
+      buttons.push(
+        <li key={i}>
+          <PaginationButton
+            className={i === selected ? 'selected' : ''}
+            onClick={() => changePage(i)}
+          >
+            {i}
+          </PaginationButton>
+        </li>
+      )
+    }
+    if (i === pages && jumpEnd < 45) {
+      buttons.push(
+        <li key={i}>
+          ...
+          <PaginationButton
+            className={i === selected ? 'selected' : ''}
+            onClick={() => changePage(i)}
+          >
+            {i}
+          </PaginationButton>
+        </li>
+      )
+    }
   }
   return (
     <>

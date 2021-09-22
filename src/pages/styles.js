@@ -9,6 +9,16 @@ export const MainContainer = styled.main`
     width: 80%;
   }
 `
+export const Title = styled.h1`
+  -webkit-text-stroke: 2px #3761a8;
+  color: #feca1b;
+  font-size: 4em;
+`
+export const Title2 = styled.h2`
+  -webkit-text-stroke: 2px #3761a8;
+  color: #feca1b;
+  font-size: 3em;
+`
 export const P = styled.p`
   margin-top: 0;
 `
@@ -21,6 +31,33 @@ export const ResultSection = styled.section`
     grid-template-columns: 1fr 1fr;
   }
 `
+export const EvolutionSection = styled.section`
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  margin-bottom: 2em;
+  @media (min-width: 700px) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+`
+export const Arrow = styled.i`
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-top: 20px;
+
+  @media (min-width: 700px) {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 60px;
+    margin-top: 0px;
+  }
+`
 export const TagList = styled.ul`
   display: flex;
   width: 80%;
@@ -28,7 +65,8 @@ export const TagList = styled.ul`
   margin-top: 0;
 `
 export const Tag = styled.li`
-  background-color: black;
+  /* background-color: #3761A8; */
+  border: 2px solid #feca1b;
   color: white;
   padding: 0.5em 1em;
   width: 100px;

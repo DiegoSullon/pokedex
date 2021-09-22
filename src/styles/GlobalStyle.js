@@ -9,11 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    background-color: white;
+    background-color: #263238;
     height: 100vh;
     overscroll-behavior: none;
     width: 100%;
     margin: 0;
+    color: white;
   }
   a{
       text-decoration: none;
@@ -46,5 +47,17 @@ export const GlobalStyle = createGlobalStyle`
   .selected{
     background-color: #d6d2d2;
     box-shadow: 0 0 0px black !important;
+  }
+  /* evolution */
+  .evolutionGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 700px) {
+    .evolutionGroup{
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 `

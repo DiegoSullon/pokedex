@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { MainContainer, ResultSection, P } from '../styles'
+import { MainContainer, ResultSection, P, Title } from '../styles'
 import Pagination from '../../components/pagination/Pagination'
 import { getPokemonId } from '../../util/utils'
 import CardLink from '../../components/cardLink/CardLink'
@@ -30,7 +30,7 @@ const Main = () => {
   return (
     <MainContainer>
       {loading && <Spinner />}
-      <h1>Pokedex</h1>
+      <Title>Pokedex</Title>
       <P>
         Page {page + 1} of {parseInt(totalElements / size) + 1}
       </P>
