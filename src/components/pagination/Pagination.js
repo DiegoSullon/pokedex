@@ -8,7 +8,7 @@ const Pagination = ({
 }) => {
   const buttons = []
   const jumpStart = selected
-  const jumpEnd = selected + 5
+  const jumpEnd = selected + 4
   for (let i = 1; i <= pages; i++) {
     if (i <= jumpEnd && i >= jumpStart) {
       buttons.push(
