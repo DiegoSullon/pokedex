@@ -31,7 +31,13 @@ export const ResultSection = styled.section`
 
   grid-gap: 1em;
   @media (min-width: 700px) {
-    grid-template-columns: 300px 300px;
+    grid-template-columns: repeat(2, 300px);
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(3, 300px);
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 300px);
   }
 `
 export const EvolutionSection = styled.section`
