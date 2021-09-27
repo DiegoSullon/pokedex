@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 export const Card = styled.div`
-  box-shadow: 0 0 3px #3761a8;
   display: flex;
   flex-direction: column;
   align-items: center;

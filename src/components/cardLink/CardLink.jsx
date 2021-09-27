@@ -11,10 +11,17 @@ import {
   StatsGrid
 } from './styles'
 
-const CardLink = ({ name, pokemonId, sprite, order, stats = [] }) => {
+const CardLink = ({
+  name,
+  pokemonId,
+  sprite,
+  order,
+  stats = [],
+  boxShadow = false
+}) => {
   return (
     <Link to={`/${pokemonId}`}>
-      <Card>
+      <Card style={boxShadow ? { boxShadow: '0 0 6px #3761a8' } : {}}>
         <ImgContainer>
           <img src={sprite} alt='default' />
           {order && (

@@ -38,6 +38,7 @@ const Main = () => {
               sprite={p.sprites.front_default}
               order={p.order}
               stats={p.stats}
+              boxShadow
             />
           ))}
       </ResultSection>
