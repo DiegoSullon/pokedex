@@ -3,7 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import CardLink from '../../components/cardLink/CardLink'
+import CardLink from '../../components/cardLink/CardLink.jsx'
 import Spinner from '../../components/spinner/Spinner'
 import { getEvolutionChain, getPokemonId, upperFirts } from '../../util/utils'
 import {

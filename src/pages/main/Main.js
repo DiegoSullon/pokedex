@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MainContainer, ResultSection, P, Title } from '../styles'
 import Pagination from '../../components/pagination/Pagination'
 import { getPokemonId } from '../../util/utils'
-import CardLink from '../../components/cardLink/CardLink'
+import CardLink from '../../components/cardLink/CardLink.jsx'
 import Spinner from '../../components/spinner/Spinner'
 import usePokedex from '../../hooks/usePokedex'
 
