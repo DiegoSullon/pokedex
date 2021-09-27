@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { upperFirts } from '../../util/utils'
+import { upperFirts, upperFirtsStat } from '../../util/utils'
 import {
   AbsoluteDiv,
   Card,
@@ -11,7 +11,7 @@ import {
   StatsGrid
 } from './styles'
 
-const CardLink = ({ name, pokemonId, sprite }) => {
+const CardLink = ({ name, pokemonId, sprite, order = 1, stats = [] }) => {
   return (
     <Link to={`/${pokemonId}`}>
       <Card>
@@ -20,36 +20,19 @@ const CardLink = ({ name, pokemonId, sprite }) => {
           <AbsoluteDiv>
             <OrderTagContent>
               <label htmlFor='order'>Order:</label>
-              <span>30</span>
+              <span>{order}</span>
             </OrderTagContent>
           </AbsoluteDiv>
         </ImgContainer>
         <Name>{upperFirts(name)}</Name>
         <StatsGrid>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
-          <StatGroup>
-            <label htmlFor='hp'>HP:</label>
-            <span>30</span>
-          </StatGroup>
+          {stats &&
+            stats.map(s => (
+              <StatGroup key={s.stat.name}>
+                <label htmlFor={s.stat.name}>{upperFirtsStat(s.stat.name)}:</label>
+                <span id={s.stat.name}>{s.base_stat}</span>
+              </StatGroup>
+            ))}
         </StatsGrid>
       </Card>
     </Link>
