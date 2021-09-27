@@ -10,7 +10,7 @@ const usePokedex = ({ page = 0, size = 20 }) => {
     setLoading(true)
     axios
       .get(
-        `https://pokeapi.co/api/v2/pokemon-species?offset=${page *
+        `https://pokeapi.co/api/v2/pokemon?offset=${page *
           size}&limit=${size}`
       )
       .then(response => {
