@@ -35,6 +35,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color:  black;
   }
+  img{
+    width: 100%;
+    height: auto;
+  }
   #app{
     overflow-x: hidden;
     min-height: 100vh;
