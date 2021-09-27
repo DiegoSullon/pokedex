@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react'
 import { MainContainer, ResultSection, P, Title } from '../styles'
 import Pagination from '../../components/pagination/Pagination'
 import { getPokemonId } from '../../util/utils'
 import CardLink from '../../components/cardLink/CardLink'
 import Spinner from '../../components/spinner/Spinner'
+import usePokedex from '../../hooks/usePokedex'
 
 const Main = () => {
   const size = 20
   const [page, setPage] = useState(0)
-  const [pokemons, setPokemons] = useState([])
-  const [totalElements, setTotalElements] = useState(0)
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    setLoading(true)
-    axios
-      .get(
-        `https://pokeapi.co/api/v2/pokemon-species?offset=${page * 20}&limit=${size}`
-      )
-      .then(response => {
-        setTotalElements(response.data.count)
-        setLoading(false)
-        setPokemons(response.data.results)
-      })
-  }, [page])
+
+  const { pokemons, totalElements, loading } = usePokedex({ page, size })
+
   const changePage = n => {
     setPage(n - 1)
   }
