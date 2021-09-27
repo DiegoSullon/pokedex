@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { MainContainer, ResultSection, P, Title } from '../styles'
-import Pagination from '../../components/pagination/Pagination'
-import { getPokemonId } from '../../util/utils'
+import Pagination from '../../components/pagination/Pagination.jsx'
 import CardLink from '../../components/cardLink/CardLink.jsx'
-import Spinner from '../../components/spinner/Spinner'
+import Spinner from '../../components/spinner/Spinner.jsx'
 import usePokedex from '../../hooks/usePokedex'
 
 const Main = () => {
@@ -35,7 +34,11 @@ const Main = () => {
             <CardLink
               key={pokemons.indexOf(p)}
               name={p.name}
-              pokemonId={getPokemonId(p.url)}
+              pokemonId={p.id}
+              sprite={p.sprites.front_default}
+              order={p.order}
+              stats={p.stats}
+              boxShadow
             />
           ))}
       </ResultSection>

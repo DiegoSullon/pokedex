@@ -26,10 +26,12 @@ export const P = styled.p`
 export const ResultSection = styled.section`
   width: 80%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 300px;
+  justify-content: center;
+
   grid-gap: 1em;
   @media (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 300px 300px;
   }
 `
 export const EvolutionSection = styled.section`
