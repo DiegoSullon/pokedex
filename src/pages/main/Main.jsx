@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { MainContainer, ResultSection, P, Title } from '../styles'
-import Pagination from '../../components/pagination/Pagination'
+import Pagination from '../../components/pagination/Pagination.jsx'
 import CardLink from '../../components/cardLink/CardLink.jsx'
-import Spinner from '../../components/spinner/Spinner'
+import Spinner from '../../components/spinner/Spinner.jsx'
 import usePokedex from '../../hooks/usePokedex'
 
 const Main = () => {

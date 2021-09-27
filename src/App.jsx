@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Main from './pages/main/Main'
-import Pokemon from './pages/pokemon/Pokemon'
+import Main from './pages/main/Main.jsx'
+import Pokemon from './pages/pokemon/Pokemon.jsx'
 import { GlobalStyle } from './styles/GlobalStyle'
 const App = () => {
   return (
