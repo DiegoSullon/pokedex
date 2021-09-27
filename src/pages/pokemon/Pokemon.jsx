@@ -1,11 +1,11 @@
 /* eslint-disable multiline-ternary */
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import CardLink from '../../components/cardLink/CardLink.jsx'
 import Spinner from '../../components/spinner/Spinner.jsx'
-import { getEvolutionChain, upperFirts } from '../../util/utils'
+import usePokemon from '../../hooks/usePokemon.js'
+import { upperFirts } from '../../util/utils'
 import {
   Arrow,
   EvolutionSection,
@@ -17,33 +17,8 @@ import {
 } from '../styles'
 
 const Pokemon = () => {
-  const [id] = useState(useParams().id)
-  const [pokemon, setPokemon] = useState(null)
-  const [evolution, setEvolution] = useState([])
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    setLoading(true)
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
-      .then(response => {
-        setLoading(false)
-        axios.get(response.data.evolution_chain.url).then(res2 => {
-          const evolutionChain = getEvolutionChain(res2.data.chain)
-          evolutionChain.map(e => {
-            axios.get(e.url.replace('-species', '')).then(res3 => {
-              console.log(res3.data)
-              setEvolution(evol => {
-                return [...evol, res3.data].sort((a, b) =>
-                  a.id > b.id ? 1 : -1
-                )
-              })
-            })
-            return e
-          })
-        })
-        setPokemon(response.data)
-      })
-  }, [])
+  const { pokemon, evolution, loading } = usePokemon(useParams().id)
+
   return (
     <MainContainer>
       {loading && <Spinner />}

@@ -8,9 +8,6 @@ const usePokedex = ({ page = 0, size = 20 }) => {
 
   useEffect(() => {
     getPokemons()
-    if (pokemons) {
-      //   console.log(pokemons)
-    }
   }, [page])
   const getPokemons = () => {
     setPokemons([])
@@ -22,7 +19,9 @@ const usePokedex = ({ page = 0, size = 20 }) => {
       .then(response => {
         setTotalElements(response.data.count)
         response.data.results.map(p => {
+          setLoading(true)
           axios.get(p.url).then(res => {
+            setLoading(false)
             setPokemons(pokemons => {
               return [...pokemons, res.data].sort((a, b) =>
                 a.id > b.id ? 1 : -1
@@ -31,7 +30,6 @@ const usePokedex = ({ page = 0, size = 20 }) => {
           })
           return p
         })
-        setLoading(false)
       })
   }
 
